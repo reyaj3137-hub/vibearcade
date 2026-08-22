@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Global SEO Meta Tags -->
+    <title>VibeArcade - Play 20 Free Online Browser Games | No Download</title>
+    <meta name="title" content="VibeArcade - Play 20 Free Online Browser Games | No Download">
+    <meta name="description" content="Play 20 high-quality free online HTML5 games on VibeArcade. Instant play arcade, puzzle, board, and action games in your browser on mobile and desktop.">
+    <meta name="keywords" content="free browser games, online games no download, html5 arcade games, 2048 online, snake game, puzzle games online">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="author" content="VibeArcade">
+
+    <!-- Favicon & Touch Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- Open Graph / Facebook / WhatsApp (SEO Logo Display) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vibearcade.github.io/">
+    <meta property="og:title" content="VibeArcade - Free Online Browser Games">
+    <meta property="og:description" content="Play instant HTML5 games on any device. No download required.">
+    <meta property="og:image" content="https://vibearcade.github.io/og-image.png">
+
+    <!-- Twitter SEO -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vibearcade.github.io/">
+    <meta property="twitter:title" content="VibeArcade - Free Online Browser Games">
+    <meta property="twitter:description" content="Play instant HTML5 games on any device. No download required.">
+    <meta property="twitter:image" content="https://vibearcade.github.io/og-image.png">
+
+    <!-- External Google Fonts & Stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <img src="logo.png" alt="VibeArcade Logo" class="site-logo" onerror="this.style.display='none'">
+                <span class="logo-text">Vibe<span class="highlight">Arcade</span></span>
+            </a>
+            
+            <div class="search-box">
+                <input type="text" id="gameSearch" placeholder="Search 20+ games..." onkeyup="filterGames()">
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Leaderboard Ad Spot (AdSterra 728x90 / 320x50) -->
+    <div class="ad-container top-ad">
+        <div class="ad-placeholder">
+            <!-- AdSterra Top Banner Code Insert Here -->
+            <span>Advertisement</span>
+        </div>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <section class="category-bar">
+        <button class="cat-btn active" onclick="filterCategory('all')">All Games</button>
+        <button class="cat-btn" onclick="filterCategory('arcade')">Arcade</button>
+        <button class="cat-btn" onclick="filterCategory('puzzle')">Puzzle</button>
+        <button class="cat-btn" onclick="filterCategory('board')">Board</button>
+        <button class="cat-btn" onclick="filterCategory('casual')">Casual</button>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+        <!-- Game Grid Section -->
+        <section class="game-grid" id="gameGrid">
+            
+            <!-- Game 1 Card -->
+            <div class="game-card" data-category="arcade" onclick="openGame('snake')">
+                <div class="card-thumb">
+                    <span class="badge">Hot</span>
+                    <div class="thumb-placeholder">🐍</div>
+                </div>
+                <div class="card-info">
+                    <h3>Modern Snake</h3>
+                    <p>Arcade</p>
+                </div>
+            </div>
+
+            <!-- Game 2 Card -->
+            <div class="game-card" data-category="puzzle" onclick="openGame('2048')">
+                <div class="card-thumb">
+                    <span class="badge">Popular</span>
+                    <div class="thumb-placeholder">🔢</div>
+                </div>
+                <div class="card-info">
+                    <h3>2048 Classic</h3>
+                    <p>Puzzle</p>
+                </div>
+            </div>
+
+            <!-- AdSterra Native Ad Placement inside Game Grid -->
+            <div class="game-card native-ad-card">
+                <div class="ad-native-placeholder">
+                    <!-- AdSterra Native Ad Code Insert Here -->
+                    <span>Sponsored Content</span>
+                </div>
+            </div>
+
+            <!-- Game 3 Card -->
+            <div class="game-card" data-category="arcade" onclick="openGame('flappy')">
+                <div class="card-thumb">
+                    <div class="thumb-placeholder">🐦</div>
+                </div>
+                <div class="card-info">
+                    <h3>Flappy Bird</h3>
+                    <p>Arcade</p>
+                </div>
+            </div>
+
+            <!-- Game 4 Card -->
+            <div class="game-card" data-category="board" onclick="openGame('tictactoe')">
+                <div class="card-thumb">
+                    <div class="thumb-placeholder">❌⭕</div>
+                </div>
+                <div class="card-info">
+                    <h3>Tic-Tac-Toe Pro</h3>
+                    <p>Board</p>
+                </div>
+            </div>
+
+            <!-- (More game cards will be rendered dynamically by JavaScript) -->
+
+        </section>
+    </main>
+
+    <!-- Bottom Leaderboard Ad Spot -->
+    <div class="ad-container bottom-ad">
+        <div class="ad-placeholder">
+            <!-- AdSterra Bottom Banner Code Insert Here -->
+            <span>Advertisement</span>
+        </div>
+    </div>
+
+    <!-- Game Player Modal Popup Structure -->
+    <div class="game-modal" id="gameModal">
+        <div class="modal-content">
+            <!-- Pre-Game Loader Ad Screen -->
+            <div id="preLoaderScreen" class="preloader-screen">
+                <h3>Game Loading...</h3>
+                <div class="loader-spinner"></div>
+                <div class="ad-container preloader-ad">
+                    <!-- AdSterra 300x250 Banner Code Insert Here -->
+                    <span>Loading Advertisement</span>
+                </div>
+            </div>
+
+            <!-- Actual Game Frame Screen -->
+            <div id="gameFrameScreen" class="game-frame-screen" style="display: none;">
+                <div class="modal-header">
+                    <h2 id="modalGameTitle">Game Title</h2>
+                    <div class="modal-controls">
+                        <button onclick="toggleFullscreen()" class="ctrl-btn">Full Screen</button>
+                        <button onclick="closeGame()" class="ctrl-btn close-btn">✕ Close</button>
+                    </div>
+                </div>
+                
+                <div class="canvas-wrapper" id="canvasWrapper">
+                    <!-- Game Canvas will be injected dynamically -->
+                </div>
+
+                <div class="ad-container game-bottom-ad">
+                    <!-- AdSterra In-Game Auto-Refresh Banner -->
+                    <span>Advertisement</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 VibeArcade. All rights reserved. Free online browser games.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript Link -->
+    <script src="script.js"></script>
+</body>
+  </html>
