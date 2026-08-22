@@ -1,0 +1,310 @@
+/* Reset & Global CSS Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --accent-cyan: #38bdf8;
+    --accent-purple: #a855f7;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Navbar */
+.navbar {
+    background: #1e293b;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+.site-logo {
+    height: 35px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.highlight {
+    color: var(--accent-cyan);
+}
+
+.search-box input {
+    background: #0f172a;
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    color: #fff;
+    outline: none;
+    width: 220px;
+    transition: 0.3s;
+}
+
+.search-box input:focus {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+/* AdSterra Ad Containers */
+.ad-container {
+    max-width: 1200px;
+    margin: 1rem auto;
+    text-align: center;
+    width: 100%;
+}
+
+.ad-placeholder {
+    background: #1e293b;
+    border: 1px dashed var(--border-color);
+    padding: 15px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-radius: 8px;
+}
+
+/* Category Filter Bar */
+.category-bar {
+    max-width: 1200px;
+    margin: 0 auto 1.5rem;
+    padding: 0 1rem;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+}
+
+.cat-btn {
+    background: #1e293b;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.cat-btn.active, .cat-btn:hover {
+    background: var(--accent-cyan);
+    color: #000;
+    border-color: var(--accent-cyan);
+}
+
+/* Main Content Grid */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    flex: 1;
+    width: 100%;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.2rem;
+}
+
+/* Game Card Styling */
+.game-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+}
+
+.card-thumb {
+    height: 130px;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.thumb-placeholder {
+    font-size: 3rem;
+}
+
+.badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: var(--accent-purple);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.card-info {
+    padding: 0.8rem;
+}
+
+.card-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.card-info p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Native Ad Card Placement */
+.native-ad-card {
+    background: #111827;
+    border-style: dashed;
+}
+
+.ad-native-placeholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Modal Game Player Structure */
+.game-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.preloader-screen {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--accent-cyan);
+    border-radius: 50%;
+    margin: 1rem auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.ctrl-btn {
+    background: #0f172a;
+    border: 1px solid var(--border-color);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.close-btn {
+    background: #ef4444;
+    border-color: #ef4444;
+}
+
+.canvas-wrapper {
+    width: 100%;
+    min-height: 400px;
+    background: #000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer Area */
+footer {
+    background: #1e293b;
+    border-top: 1px solid var(--border-color);
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.footer-container p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 0.85rem;
+  }
