@@ -1,89 +1,83 @@
-// Global Selectors
+// Global Elements
 const gameModal = document.getElementById('gameModal');
 const preLoaderScreen = document.getElementById('preLoaderScreen');
 const gameFrameScreen = document.getElementById('gameFrameScreen');
 const modalGameTitle = document.getElementById('modalGameTitle');
 const canvasWrapper = document.getElementById('canvasWrapper');
 
-// 1. Instant Search Functionality
+// Search Filter
 function filterGames() {
     const input = document.getElementById('gameSearch').value.toLowerCase();
     const cards = document.querySelectorAll('.game-card:not(.native-ad-card)');
 
     cards.forEach(card => {
         const title = card.querySelector('h3').textContent.toLowerCase();
-        if (title.includes(input)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+        card.style.display = title.includes(input) ? 'block' : 'none';
     });
 }
 
-// 2. Category Filter Buttons
+// Category Filter
 function filterCategory(category) {
     const buttons = document.querySelectorAll('.cat-btn');
     buttons.forEach(btn => btn.classList.remove('active'));
     
-    if (event) {
-        event.target.classList.add('active');
-    }
+    if (event) event.target.classList.add('active');
 
     const cards = document.querySelectorAll('.game-card:not(.native-ad-card)');
     cards.forEach(card => {
         const cardCat = card.getAttribute('data-category');
-        if (category === 'all' || cardCat === category) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+        card.style.display = (category === 'all' || cardCat === category) ? 'block' : 'none';
     });
 }
 
-// 3. Preloader and Game Launcher Logic
+// Preloader & Game Modal Launcher
 function openGame(gameKey) {
     gameModal.style.display = 'flex';
     preLoaderScreen.style.display = 'block';
     gameFrameScreen.style.display = 'none';
 
-    // Set Game Title
     const gameTitles = {
         'snake': 'Modern Snake Pro',
         '2048': '2048 Classic',
         'flappy': 'Flappy Bird',
-        'tictactoe': 'Tic-Tac-Toe Pro'
+        'tictactoe': 'Tic-Tac-Toe Pro',
+        'memory': 'Memory Match',
+        'tetris': 'Tetris Classic',
+        'breakout': 'Brick Breaker',
+        'wordle': 'Wordle Unlimited'
     };
     modalGameTitle.textContent = gameTitles[gameKey] || 'Browser Game';
 
-    // 3-Second AdSterra Pre-game Ad Delay
     setTimeout(() => {
         preLoaderScreen.style.display = 'none';
         gameFrameScreen.style.display = 'block';
         loadGameCanvas(gameKey);
-    }, 3000);
+    }, 2500);
 }
 
-// 4. Close Game Window
+// Close Game Modal
 function closeGame() {
     gameModal.style.display = 'none';
     canvasWrapper.innerHTML = '';
 }
 
-// 5. Fullscreen Support
+// Fullscreen Control
 function toggleFullscreen() {
     if (!document.fullscreenElement) {
-        canvasWrapper.requestFullscreen().catch(err => {
-            alert(`Error launching full-screen: ${err.message}`);
-        });
+        canvasWrapper.requestFullscreen().catch(err => alert(`Fullscreen Error: ${err.message}`));
     } else {
         document.exitFullscreen();
     }
 }
 
-// 6. Game Canvas Injector (Connects with Step 4 Games)
+// Connect All 8 Games
 function loadGameCanvas(gameKey) {
-    canvasWrapper.innerHTML = `<div style="color:#fff; text-align:center; padding:20px;">
-        <p style="font-size:1.2rem; margin-bottom:10px;">🎮 <b>${gameKey.toUpperCase()}</b> Ready to Play!</p>
-        <span style="color:#94a3b8; font-size:0.85rem;">Connecting Game Engine...</span>
-    </div>`;
+    if (gameKey === 'snake') startSnakeGame();
+    else if (gameKey === '2048') start2048Game();
+    else if (gameKey === 'flappy') startFlappyGame();
+    else if (gameKey === 'tictactoe') startTicTacToeGame();
+    else if (gameKey === 'memory') startMemoryGame();
+    else if (gameKey === 'tetris') startTetrisGame();
+    else if (gameKey === 'breakout') startBreakoutGame();
+    else if (gameKey === 'wordle') startWordleGame();
 }
