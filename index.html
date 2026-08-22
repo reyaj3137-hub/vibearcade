@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Primary Global SEO Meta Tags -->
-    <title>VibeArcade - Play 20 Free Online Browser Games | No Download</title>
-    <meta name="title" content="VibeArcade - Play 20 Free Online Browser Games | No Download">
-    <meta name="description" content="Play 20 high-quality free online HTML5 games on VibeArcade. Instant play arcade, puzzle, board, and action games in your browser on mobile and desktop.">
+    <!-- SEO Meta Tags -->
+    <title>VibeArcade - Play Free Online Browser Games</title>
+    <meta name="title" content="VibeArcade - Play Free Online Browser Games">
+    <meta name="description" content="Play high-quality free online HTML5 games on VibeArcade. Instant play arcade, puzzle, board, and casual games in your browser.">
     <meta name="keywords" content="free browser games, online games no download, html5 arcade games, 2048 online, snake game, puzzle games online">
     <meta name="robots" content="index, follow">
-    <meta name="language" content="English">
-    <meta name="author" content="VibeArcade">
 
     <!-- Favicon & Touch Icons -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" href="favicon.png">
 
-    <!-- Open Graph / Facebook / WhatsApp (SEO Logo Display) -->
+    <!-- Open Graph (SEO Logo Display) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vibearcade.github.io/">
-    <meta property="og:title" content="VibeArcade - Free Online Browser Games">
+    <meta property="og:title" content="VibeArcade - Free Online Games">
     <meta property="og:description" content="Play instant HTML5 games on any device. No download required.">
     <meta property="og:image" content="https://vibearcade.github.io/og-image.png">
 
-    <!-- Twitter SEO -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://vibearcade.github.io/">
-    <meta property="twitter:title" content="VibeArcade - Free Online Browser Games">
-    <meta property="twitter:description" content="Play instant HTML5 games on any device. No download required.">
-    <meta property="twitter:image" content="https://vibearcade.github.io/og-image.png">
-
-    <!-- External Google Fonts & Stylesheet -->
+    <!-- Google Fonts & Stylesheet -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -53,10 +44,9 @@
         </div>
     </header>
 
-    <!-- Top Leaderboard Ad Spot (AdSterra 728x90 / 320x50) -->
+    <!-- Top Leaderboard Ad Spot -->
     <div class="ad-container top-ad">
         <div class="ad-placeholder">
-            <!-- AdSterra Top Banner Code Insert Here -->
             <span>Advertisement</span>
         </div>
     </div>
@@ -72,10 +62,9 @@
 
     <!-- Main Content Area -->
     <main class="main-container">
-        <!-- Game Grid Section -->
         <section class="game-grid" id="gameGrid">
             
-            <!-- Game 1 Card -->
+            <!-- Game 1: Snake -->
             <div class="game-card" data-category="arcade" onclick="openGame('snake')">
                 <div class="card-thumb">
                     <span class="badge">Hot</span>
@@ -87,7 +76,7 @@
                 </div>
             </div>
 
-            <!-- Game 2 Card -->
+            <!-- Game 2: 2048 -->
             <div class="game-card" data-category="puzzle" onclick="openGame('2048')">
                 <div class="card-thumb">
                     <span class="badge">Popular</span>
@@ -99,15 +88,14 @@
                 </div>
             </div>
 
-            <!-- AdSterra Native Ad Placement inside Game Grid -->
+            <!-- AdSterra Native Ad Placement -->
             <div class="game-card native-ad-card">
                 <div class="ad-native-placeholder">
-                    <!-- AdSterra Native Ad Code Insert Here -->
                     <span>Sponsored Content</span>
                 </div>
             </div>
 
-            <!-- Game 3 Card -->
+            <!-- Game 3: Flappy Bird -->
             <div class="game-card" data-category="arcade" onclick="openGame('flappy')">
                 <div class="card-thumb">
                     <div class="thumb-placeholder">🐦</div>
@@ -118,7 +106,7 @@
                 </div>
             </div>
 
-            <!-- Game 4 Card -->
+            <!-- Game 4: Tic-Tac-Toe -->
             <div class="game-card" data-category="board" onclick="openGame('tictactoe')">
                 <div class="card-thumb">
                     <div class="thumb-placeholder">❌⭕</div>
@@ -129,7 +117,49 @@
                 </div>
             </div>
 
-            <!-- (More game cards will be rendered dynamically by JavaScript) -->
+            <!-- Game 5: Memory Card -->
+            <div class="game-card" data-category="casual" onclick="openGame('memory')">
+                <div class="card-thumb">
+                    <div class="thumb-placeholder">🧠</div>
+                </div>
+                <div class="card-info">
+                    <h3>Memory Match</h3>
+                    <p>Casual</p>
+                </div>
+            </div>
+
+            <!-- Game 6: Tetris -->
+            <div class="game-card" data-category="arcade" onclick="openGame('tetris')">
+                <div class="card-thumb">
+                    <div class="thumb-placeholder">🧱</div>
+                </div>
+                <div class="card-info">
+                    <h3>Tetris Classic</h3>
+                    <p>Arcade</p>
+                </div>
+            </div>
+
+            <!-- Game 7: Brick Breaker -->
+            <div class="game-card" data-category="arcade" onclick="openGame('breakout')">
+                <div class="card-thumb">
+                    <div class="thumb-placeholder">🎾</div>
+                </div>
+                <div class="card-info">
+                    <h3>Brick Breaker</h3>
+                    <p>Arcade</p>
+                </div>
+            </div>
+
+            <!-- Game 8: Wordle -->
+            <div class="game-card" data-category="puzzle" onclick="openGame('wordle')">
+                <div class="card-thumb">
+                    <div class="thumb-placeholder">🔤</div>
+                </div>
+                <div class="card-info">
+                    <h3>Wordle Unlimited</h3>
+                    <p>Puzzle</p>
+                </div>
+            </div>
 
         </section>
     </main>
@@ -137,25 +167,21 @@
     <!-- Bottom Leaderboard Ad Spot -->
     <div class="ad-container bottom-ad">
         <div class="ad-placeholder">
-            <!-- AdSterra Bottom Banner Code Insert Here -->
             <span>Advertisement</span>
         </div>
     </div>
 
-    <!-- Game Player Modal Popup Structure -->
+    <!-- Game Player Modal Popup -->
     <div class="game-modal" id="gameModal">
         <div class="modal-content">
-            <!-- Pre-Game Loader Ad Screen -->
             <div id="preLoaderScreen" class="preloader-screen">
                 <h3>Game Loading...</h3>
                 <div class="loader-spinner"></div>
                 <div class="ad-container preloader-ad">
-                    <!-- AdSterra 300x250 Banner Code Insert Here -->
                     <span>Loading Advertisement</span>
                 </div>
             </div>
 
-            <!-- Actual Game Frame Screen -->
             <div id="gameFrameScreen" class="game-frame-screen" style="display: none;">
                 <div class="modal-header">
                     <h2 id="modalGameTitle">Game Title</h2>
@@ -165,12 +191,9 @@
                     </div>
                 </div>
                 
-                <div class="canvas-wrapper" id="canvasWrapper">
-                    <!-- Game Canvas will be injected dynamically -->
-                </div>
+                <div class="canvas-wrapper" id="canvasWrapper"></div>
 
                 <div class="ad-container game-bottom-ad">
-                    <!-- AdSterra In-Game Auto-Refresh Banner -->
                     <span>Advertisement</span>
                 </div>
             </div>
@@ -180,7 +203,7 @@
     <!-- Footer -->
     <footer>
         <div class="footer-container">
-            <p>&copy; 2026 VibeArcade. All rights reserved. Free online browser games.</p>
+            <p>&copy; 2026 VibeArcade. All rights reserved.</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -189,7 +212,15 @@
         </div>
     </footer>
 
-    <!-- Main JavaScript Link -->
+    <!-- All 8 Game Engines & Main Control Scripts -->
+    <script src="snake.js"></script>
+    <script src="2048.js"></script>
+    <script src="flappy.js"></script>
+    <script src="tictactoe.js"></script>
+    <script src="memory.js"></script>
+    <script src="tetris.js"></script>
+    <script src="breakout.js"></script>
+    <script src="wordle.js"></script>
     <script src="script.js"></script>
 </body>
-  </html>
+            </html>
